@@ -1,0 +1,25 @@
+{
+  "name": "siano-v1",
+  "version": "1.0.0",
+  "description": "SIANO v1 - a fast, modular WhatsApp bot",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "check": "node --check index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "dotenv": "^16.4.5",
+    "pino": "^9.5.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.0",
+    "wa-sticker-formatter": "^4.4.4",
+    "yt-search": "^2.12.1"
+  },
+  "license": "MIT"
+}
