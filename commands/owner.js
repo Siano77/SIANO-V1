@@ -6,7 +6,6 @@ const TOGGLES = {
   autoviewstatus: ['autoViewStatus', 'view contacts\' statuses automatically'],
   autolikestatus: ['autoLikeStatus', 'react to contacts\' statuses'],
   anticall: ['antiCall', 'reject incoming calls'],
-  antidelete: ['antiDelete', 'forward deleted messages to the owner'],
 }
 const truthy = (v) => ['on', 'true', 'yes', '1', 'enable'].includes(v)
 const falsy = (v) => ['off', 'false', 'no', '0', 'disable'].includes(v)
