@@ -13,7 +13,7 @@
         "required": true
         
       },
-      "PREFIX": {
+      "PREFIX":. {
         "description": "Bot command prefix, (e.g, . , ! @ etc",
         "value":".",
         "required": true
@@ -25,7 +25,7 @@
         "required": false
         
       },
-      "MODE": {
+      "MODE":public {
         "description": "Bot mode can be public, private, inbox or groups in small letters (e.g, public)",
         "value":"private",
         "required": true
