@@ -4,6 +4,20 @@ const ORDER = ['general', 'owner', 'group', 'tools', 'ai', 'download', 'search',
 const ICON = { general: '✦', owner: '♛', group: '❖', tools: '⚙', ai: '✺', download: '⬇', search: '⌕', fun: '☺' }
 const title = (s) => s.charAt(0).toUpperCase() + s.slice(1)
 
+// "ꜱᴍᴀʟʟ ᴄᴀᴘꜱ" styling for the menu header/section titles — a Unicode character swap,
+// not a font: works in any WhatsApp client, no special font install needed.
+const SMALL_CAPS = {
+  a: 'ᴀ', b: 'ʙ', c: 'ᴄ', d: 'ᴅ', e: 'ᴇ', f: 'ꜰ', g: 'ɢ', h: 'ʜ', i: 'ɪ', j: 'ᴊ',
+  k: 'ᴋ', l: 'ʟ', m: 'ᴍ', n: 'ɴ', o: 'ᴏ', p: 'ᴘ', q: 'ǫ', r: 'ʀ', s: 'ꜱ', t: 'ᴛ',
+  u: 'ᴜ', v: 'ᴠ', w: 'ᴡ', x: 'x', y: 'ʏ', z: 'ᴢ',
+}
+const sc = (s) => String(s).toLowerCase().replace(/[a-z]/g, (c) => SMALL_CAPS[c] || c)
+
+// A labelled line inside a box, padded so the ":" lines up — e.g. "ᴜꜱᴇʀ    : Grace".
+const boxLine = (label, value) => `│ ${sc(label).padEnd(11, ' ')}: ${value}`
+const boxTop = (title) => `╭─❖ ${sc(title)} ❖─╮`
+const boxBottom = '╰──────────────────╯'
+
 export default [
   {
     name: 'ping',
@@ -60,8 +74,8 @@ export default [
           return m.reply(lines.filter(Boolean).join('\n'))
         }
         if (ORDER.includes(arg)) {
-          const rows = registry.list.filter((x) => x.category === arg).map((x) => `${prefix}${x.name} — ${x.desc || ''}`)
-          return m.reply(`${ICON[arg]} *${title(arg)}*\n\n${rows.join('\n')}`)
+          const rows = registry.list.filter((x) => x.category === arg).map((x) => `│ ◦ ${prefix}${x.name}`)
+          return m.reply([boxTop(arg), ...rows, boxBottom].join('\n'))
         }
         return m.reply(`No command or category called "${arg}". Try ${prefix}menu.`)
       }
@@ -72,15 +86,22 @@ export default [
         cats.get(c.category).push(c)
       }
       const names = [...ORDER.filter((x) => cats.has(x)), ...[...cats.keys()].filter((x) => !ORDER.includes(x))]
+      const userName = sock.user?.name || jidNum(sock.user?.id) || 'unknown'
 
       const out = [
-        `✦ *${config.name} v${config.version}*`,
-        `uptime ${uptime(process.uptime())}  ·  mode ${settings.get('mode')}  ·  prefix ${prefix}`,
-        '────────────────────',
+        boxTop(config.name),
+        `│ ${sc('fast')} • ${sc('stable')} • ${sc('active 24/7')}`,
+        '│',
+        boxLine('user', userName),
+        boxLine('prefix', prefix),
+        boxLine('mode', settings.get('mode')),
+        boxLine('uptime', uptime(process.uptime())),
+        boxLine('commands', registry.list.length),
+        boxBottom,
       ]
       for (const cat of names) {
         const list = cats.get(cat)
-        out.push('', `${ICON[cat] || '•'} *${title(cat)}* (${list.length})`, list.map((c) => prefix + c.name).join('  '))
+        out.push('', boxTop(`${ICON[cat] || '•'} ${title(cat)} (${list.length})`), ...list.map((c) => `│ ◦ ${prefix}${c.name}`), boxBottom)
       }
       out.push('', `_${prefix}menu <command or category> for details_`)
       const caption = out.join('\n')
