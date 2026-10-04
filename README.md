@@ -2,6 +2,8 @@
 
 A fast, modular WhatsApp bot built on [Baileys](https://github.com/WhiskeySockets/Baileys). No number scanning a QR code by hand on the host — it connects using a `SESSION_ID` you generate once from the **SIANO pair site** (see `../pair`).
 
+    <img  src="https://kommodo.ai/i/WjQZ7zYD768EhUaaHSJ8"
+
 ## What's inside
 
 ```
