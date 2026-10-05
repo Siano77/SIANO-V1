@@ -14,7 +14,7 @@
 
 <div align="center">
 
-<img src="./assets/banner.png" width="100%" alt="SIANO-MD V1 Banner" />
+<img src="./assets/banner.jpg" width="100%" alt="SIANO-MD V1 Banner" />
 
 </div>
 
