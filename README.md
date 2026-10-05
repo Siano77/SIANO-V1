@@ -1,60 +1,92 @@
-# SIANO v1
+<div align="center">
 
-A fast, modular WhatsApp bot built on [Baileys](https://github.com/WhiskeySockets/Baileys). No number scanning a QR code by hand on the host — it connects using a `SESSION_ID` you generate once from the **SIANO pair site** (see `../pair`).
+<a href="#"><img src="https://img.shields.io/badge/DON'T%20FORGET%20TO%20FORK%20‖%20&%20STAR%20★%20OUR%20REPO!!-1a1a1a?style=for-the-badge" /></a>
 
-    <img  src="https://kommodo.ai/i/WjQZ7zYD768EhUaaHSJ8">
+</div>
 
-## What's inside
+<br>
 
-```
-index.js            entry point
-src/                 core: connection, session handling, command loader, message handler…
-commands/            one file per category — add new commands here
-data/db.json         small local database (settings, sudo list) — created automatically
-session/             WhatsApp credentials — created automatically, never commit this
-```
+> **CURRENT BOT VERSION ➜** `1.1.1` ⚡
 
-## Run it locally
+---
 
-```bash
-npm install
-cp .env.example .env
-# edit .env: paste your SESSION_ID (from the pair site) or set PAIR_NUMBER to pair from this console
-npm start
-```
+<h1 align="center">🔥 SIANO-MD-V1 BOT REPO 🔥</h1>
 
-## Deploy it (Bot-Hosting, Specify, Katabump, Render, or similar)
+<div align="center">
 
-1. Upload this `bot/` folder (or push it to a GitHub repo and connect that).
-2. Set the **start command** to `npm install && npm start` (most panels do this automatically once they see `package.json`).
-3. Open the panel's **Environment / Variables** tab and add the variables from `.env.example` — at minimum `SESSION_ID`, `OWNER_NUMBER`, and `OWNER_LID` from the pair site.
-4. Start (or restart) the bot. It logs `connected as …` once it's linked, and sends a message to your own WhatsApp confirming it's online.
-5. If a host requires an open port to stay running, `PORT` is already handled — the bot serves a tiny status JSON at `/`.
+<img src="[url=https://i.ibb.co/h1L9wpRB/photo-5913312811838804213-w.jpg" width="100%" alt="SIANO-MD V1 Banner" />
 
-If you'd rather pair straight from the host's console: leave `SESSION_ID` empty, set `PAIR_NUMBER` to your number (digits, with country code), start the bot, and copy the pairing code from the logs. Remove `PAIR_NUMBER` afterwards.
+</div>
 
-## Adding a command
+<br>
 
-Drop a new file in `commands/`, or add to an existing one — default-export an object (or array of objects):
+<div align="center">
 
-```js
-export default {
-  name: 'hello',
-  aliases: ['hi'],
-  desc: 'Say hello',
-  category: 'fun',
-  async run({ m }) {
-    await m.reply('Hello there!')
-  },
-}
-```
+[![WhatsApp Channel](https://img.shields.io/badge/📡_FOLLOW_CHANNEL-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VbDLJZHLY6d0XqzYIe3o)
+[![Telegram](https://img.shields.io/badge/✈️_TELEGRAM_GROUP-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/sianotech)
+[![GitHub Repo](https://img.shields.io/badge/🐙_GITHUB_REPO-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Siano77/SIANO-V1-Basic)
 
-`ctx` passed to `run()` also has: `sock`, `args`, `text`, `prefix`, `isOwner`, `isSudo`, `isAdmin`, `isBotAdmin`, `meta` (group info, in groups), `config`, `settings` (get/set live settings), `registry`.
+</div>
 
-Flags you can set on a command: `owner` (owner/sudo only), `root` (owner only, not sudo), `group` (groups only), `admin` (group admins only), `botAdmin` (bot must be a group admin).
+---
 
-## Notes
+## 🍴 FIRST FORK THE REPOSITORY
 
-- `SESSION_ID` gives full control of the linked WhatsApp number. Treat it like a password — never share it or commit it.
-- If WhatsApp unlinks the device (logged out remotely, or you unlink it from the phone), generate a fresh `SESSION_ID` from the pair site and update it on the host.
-- Everything under `commands/` is plain, readable code — nothing here phones home or pulls code from the internet at runtime.
+> CLICK THE FORK BUTTON BELOW
+
+<div align="center">
+
+[![Fork](https://img.shields.io/badge/🔱_FORK-2f81f7?style=for-the-badge)](https://github.com/Siano77/SIANO-V1-Basic/fork)
+[![Bot Repo](https://img.shields.io/badge/🤖_BOT_REPO-8b5cf6?style=for-the-badge)](https://github.com/Siano77/SIANO-V1-Basic)
+
+</div>
+
+---
+
+## 🔑 GET SESSION ID BELOW
+
+> FROM PAIRING WEB
+
+<div align="center">
+
+[![Get Pairing Code](https://img.shields.io/badge/⚡_GET_PAIRING_CODE-FF6B00?style=for-the-badge)](https://siano-mdv1-pairing-code.onrender.com/)
+
+</div>
+
+---
+
+## 🚀 DEPLOYMENT METHODS
+
+- Add your session ID to `SESSION_ID` in the `.env` or `config.js` file.
+- Edit the `.env` file according to your preferences.
+
+---
+
+## 📦 FOR PANEL DEPLOYMENT
+
+- Click on [**DOWNLOAD**](https://github.com/Siano77/SIANO-V1-Basic/archive/refs/heads/main.zip) to get zip file 📥
+- Create a server on your panel
+- Upload zip file 📤
+- Unzip it and others
+- Start server
+
+---
+
+## 🌐 OTHER DEPLOYMENT PLATFORMS
+
+- Deploy on [**Bot-Hosting.Net**](https://bot-hosting.net) `Free`
+- Deploy on [**Render**](https://render.com) `Free`
+- Deploy on [**Katabump**](https://katabump.com) `Free`
+- Deploy on [**Optiklink**](https://optiklink.com) `Free`
+- Deploy on [**Heroku**](https://heroku.com) `Paid`
+- Deploy on [**SianoTech-Host**](https://github.com/Siano77) `Paid`
+
+---
+
+<div align="center">
+
+### ⚔️ DISCIPLINE TODAY · VICTORY TOMORROW ⚔️
+
+**BUILT FOR THE FUTURE. DESIGNED TO LEAD.**
+
+</div>
