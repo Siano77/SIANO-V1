@@ -14,7 +14,7 @@
 
 <div align="center">
 
-<img src="[url=https://i.ibb.co/h1L9wpRB/photo-5913312811838804213-w.jpg" width="100%" alt="SIANO-MD V1 Banner" />
+<img src="https://i.ibb.co/h1L9wpRB/photo-5913312811838804213-w.jpg" width="100%" alt="SIANO-MD V1 Banner" />
 
 </div>
 
